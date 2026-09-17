@@ -1,0 +1,242 @@
+# ===========================================
+# LuRPG Skills Configuration
+# ===========================================
+
+# Skill definitions
+# Each skill can have: trigger, cast_mode, class, level, cost, cooldown, description, effects
+skills:
+  # === WARRIOR Skills ===
+  flame_slash:
+    display-name: "<gradient:#ff6600:#ff0000>烈焰斩"
+    description:
+      - "<gray>挥舞武器斩出烈焰"
+      - "<gray>对前方敌人造成 <gold>150%</gold> 物理攻击伤害"
+      - "<gray>并附加 <#ff6600>火焰伤害</#ff6600>"
+    class: WARRIOR
+    level: 5
+    trigger: ACTIVE
+    cast-mode: RIGHT_CLICK
+    cost:
+      type: RAGE
+      amount: 30
+    cooldown: 8
+    icon: FLINT_AND_STEEL
+    effects:
+      damage:
+        type: PHYSICAL
+        multiplier: 1.5
+      element:
+        type: FIRE
+        amount: 15
+      range: 4
+      cone-angle: 45
+
+  berserk:
+    display-name: "<dark_red>狂暴"
+    description:
+      - "<gray>进入狂暴状态"
+      - "<gray>持续 <gold>10秒</gold>，攻击力提升 <gold>30%</gold>"
+      - "<gray>但受到伤害增加 <red>10%</red>"
+    class: WARRIOR
+    level: 15
+    trigger: ACTIVE
+    cast-mode: SNEAK_RIGHT_CLICK
+    cost:
+      type: RAGE
+      amount: 50
+    cooldown: 30
+    icon: REDSTONE
+    effects:
+      buff:
+        stat: PHYSICAL_ATTACK
+        multiplier: 1.3
+        duration: 200
+      debuff:
+        stat: PHYSICAL_DEFENSE
+        multiplier: 0.9
+        duration: 200
+
+  shield_bash:
+    display-name: "<white>盾击"
+    description:
+      - "<gray>用盾牌猛击敌人"
+      - "<gray>造成 <gold>80%</gold> 物理伤害"
+      - "<gray>并有 <gold>50%</gold> 几率眩晕 <gold>2秒</gold>"
+    class: WARRIOR
+    level: 1
+    trigger: ON_ATTACK
+    cast-mode: PASSIVE
+    cost:
+      type: RAGE
+      amount: 10
+    cooldown: 5
+    icon: SHIELD
+    effects:
+      damage:
+        type: PHYSICAL
+        multiplier: 0.8
+      stun:
+        chance: 50
+        duration: 40
+
+  # === MAGE Skills ===
+  fireball:
+    display-name: "<gradient:#ff6600:#ffaa00>火球术"
+    description:
+      - "<gray>发射一枚火球"
+      - "<gray>造成 <gold>200%</gold> 魔法攻击伤害"
+      - "<gray>范围 <gold>3格</gold> 爆炸"
+    class: MAGE
+    level: 1
+    trigger: ACTIVE
+    cast-mode: RIGHT_CLICK
+    cost:
+      type: MANA
+      amount: 20
+    cooldown: 3
+    icon: FIRE_CHARGE
+    effects:
+      damage:
+        type: MAGICAL
+        multiplier: 2.0
+      element:
+        type: FIRE
+        amount: 25
+      projectile:
+        type: FIREBALL
+        speed: 1.5
+        radius: 3
+
+  ice_nova:
+    display-name: "<aqua>冰霜新星"
+    description:
+      - "<gray>释放冰霜冲击波"
+      - "<gray>造成 <gold>150%</gold> 魔法伤害"
+      - "<gray>并减速周围敌人 <gold>5秒</gold>"
+    class: MAGE
+    level: 10
+    trigger: ACTIVE
+    cast-mode: SNEAK_RIGHT_CLICK
+    cost:
+      type: MANA
+      amount: 40
+    cooldown: 15
+    icon: BLUE_ICE
+    effects:
+      damage:
+        type: MAGICAL
+        multiplier: 1.5
+      element:
+        type: ICE
+        amount: 20
+      range: 6
+      slow:
+        duration: 100
+        amplifier: 2
+
+  mana_shield:
+    display-name: "<blue>法力护盾"
+    description:
+      - "<gray>用法力形成护盾"
+      - "<gray>吸收 <gold>50%</gold> 伤害"
+      - "<gray>持续 <gold>10秒</gold>"
+    class: MAGE
+    level: 5
+    trigger: ON_DAMAGED
+    cast-mode: PASSIVE
+    cost:
+      type: MANA
+      amount: 15
+    cooldown: 20
+    icon: ENDER_EYE
+    effects:
+      shield:
+        damage-reduction: 0.5
+        duration: 200
+
+  # === ASSASSIN Skills ===
+  shadow_strike:
+    display-name: "<dark_purple>暗影打击"
+    description:
+      - "<gray>瞬间突进到目标身后"
+      - "<gray>造成 <gold>250%</gold> 物理伤害"
+      - "<gray>必定暴击"
+    class: ASSASSIN
+    level: 1
+    trigger: ACTIVE
+    cast-mode: RIGHT_CLICK
+    cost:
+      type: ENERGY
+      amount: 40
+    cooldown: 6
+    icon: NETHERITE_SWORD
+    effects:
+      damage:
+        type: PHYSICAL
+        multiplier: 2.5
+        force-crit: true
+      dash:
+        distance: 8
+      behind-target: true
+
+  smoke_bomb:
+    display-name: "<gray>烟雾弹"
+    description:
+      - "<gray>投掷烟雾弹"
+      - "<gray>获得 <gold>隐身</gold> <gold>5秒</gold>"
+      - "<gray>下一击伤害提升 <gold>100%</gold>"
+    class: ASSASSIN
+    level: 10
+    trigger: ACTIVE
+    cast-mode: SNEAK_RIGHT_CLICK
+    cost:
+      type: ENERGY
+      amount: 60
+    cooldown: 25
+    icon: BLACK_DYE
+    effects:
+      invisibility:
+        duration: 100
+      buff:
+        stat: PHYSICAL_ATTACK
+        multiplier: 2.0
+        duration: 100
+        next-hit-only: true
+
+  dodge:
+    display-name: "<white>闪避"
+    description:
+      - "<gray>有 <gold>20%</gold> 几率闪避攻击"
+      - "<gray>闪避后恢复 <gold>20</gold> 能量"
+    class: ASSASSIN
+    level: 1
+    trigger: ON_DAMAGED
+    cast-mode: PASSIVE
+    cost:
+      type: NONE
+      amount: 0
+    cooldown: 0
+    icon: FEATHER
+    effects:
+      dodge:
+        chance: 20
+        resource-restore: 20
+
+  # === Universal Skills ===
+  healing_potion:
+    display-name: "<green>治疗术"
+    description:
+      - "<gray>恢复 <gold>20%</gold> 最大生命值"
+    class: MAGE
+    level: 5
+    trigger: ACTIVE
+    cast-mode: RIGHT_CLICK
+    cost:
+      type: MANA
+      amount: 30
+    cooldown: 20
+    icon: POTION
+    effects:
+      heal:
+        type: PERCENT_MAX_HEALTH
+        amount: 0.2

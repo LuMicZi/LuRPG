@@ -1,0 +1,97 @@
+# ===========================================
+# LuRPG Items Configuration
+# ===========================================
+# Items are primarily defined via CraftEngine config.
+# This file defines RPG item templates and templates for
+# items that don't use CraftEngine (fallback vanilla items).
+
+items:
+  # Example weapon (CraftEngine integrated)
+  flame_sword:
+    display-name: "<gradient:#ff6600:#ff0000>烈焰之剑"
+    type: WEAPON
+    weapon-type: SWORD
+    material: NETHERITE_SWORD
+    level-requirement: 10
+    class-requirement:
+      - WARRIOR
+      - ASSASSIN
+    stats:
+      physical-attack: 45
+      critical-chance: 15
+      critical-damage: 50
+      lifesteal: 5
+    element:
+      fire: 20
+    skills:
+      - flame_slash
+    lore-template: legendary
+    custom-model-data: 10001
+
+  # Example armor
+  guardian_helmet:
+    display-name: "<gradient:#0099ff:#00ffff>守护者头盔"
+    type: ARMOR
+    armor-type: HELMET
+    material: NETHERITE_HELMET
+    level-requirement: 15
+    class-requirement:
+      - WARRIOR
+    stats:
+      max-health: 50
+      physical-defense: 20
+      magical-defense: 10
+    armor-set: guardian
+    lore-template: epic
+    custom-model-data: 20001
+
+  # Example potion
+  greater_healing_potion:
+    display-name: "<gradient:#ff0000:#ff6666>高级治疗药水"
+    type: POTION
+    material: POTION
+    potion-color: RED
+    level-requirement: 1
+    effects:
+      heal:
+        type: INSTANT
+        amount: 50
+      buff:
+        stat: PHYSICAL_DEFENSE
+        multiplier: 1.2
+        duration: 200
+    cooldown: 30
+    max-stack: 3
+    lore-template: common
+    custom-model-data: 30001
+
+# Lore templates
+lore-templates:
+  legendary:
+    rarity-name: "<gradient:#ffaa00:#ff6600>传说"
+    separator: "<dark_gray>━━━━━━━━━━━━━━━━━━"
+    show-stats: true
+    show-element: true
+    show-skills: true
+    show-requirements: true
+  epic:
+    rarity-name: "<dark_purple>史诗"
+    separator: "<dark_gray>━━━━━━━━━━━━━━━━━━"
+    show-stats: true
+    show-element: true
+    show-skills: false
+    show-requirements: true
+  rare:
+    rarity-name: "<blue>稀有"
+    separator: "<dark_gray>━━━━━━━━━━━━━━━━━━"
+    show-stats: true
+    show-element: false
+    show-skills: false
+    show-requirements: true
+  common:
+    rarity-name: "<gray>普通"
+    separator: "<dark_gray>━━━━━━━━━━━━━━━━━━"
+    show-stats: true
+    show-element: false
+    show-skills: false
+    show-requirements: false

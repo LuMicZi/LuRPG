@@ -1,0 +1,23 @@
+# Lore Template: Rare (稀有 - 蓝色调)
+rarity-name: "<blue>◆ 稀有 ◆"
+rarity-color: "<blue>"
+type-format: "<gray>{type}"
+separator: "<blue>━━━━━━━━━━━━━━━━━━━━"
+
+show-description: true
+show-stats: true
+show-element: false
+show-special-effects: false
+show-skills: false
+show-requirements: true
+show-set-info: false
+
+stat-format: "  {icon} {color}{display}: <white>{value}{suffix}"
+element-format: "  <gray>{element}: <white>{value}"
+description-format: "<gray>  {text}"
+special-effects-title: "<blue>【特殊效果】</blue>"
+special-effect-format: "  <aqua>▸ {name}\n  <gray>{desc}"
+skill-name-format: "<aqua>▸ {skill_name}"
+skill-desc-format: "<gray>  {desc}"
+req-level-format: "<blue>需求等级: <white>{level}"
+req-class-format: "<blue>职业: <white>{class}"

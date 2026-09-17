@@ -1,0 +1,53 @@
+name: LuRPG
+version: '${project.version}'
+main: com.lumiczi.lurpg.LuRPGPlugin
+api-version: '1.21'
+authors:
+  - LuMicZi
+description: RPG plugin with skills, lore, items, classes and GUI
+website: https://github.com/LuMicZi/LuRPG
+
+# CraftEngine is an optional integration accessed reflectively.
+# Vault / PlaceholderAPI / MythicMobs are optional integrations accessed reflectively.
+softdepend:
+  - CraftEngine
+  - Vault
+  - PlaceholderAPI
+  - MythicMobs
+
+commands:
+  rpg:
+    description: Main LuRPG player command
+    usage: /rpg [help|panel|menu]
+    permission: lurpg.player
+    aliases: [lurpg]
+  rpgadmin:
+    description: LuRPG admin command
+    usage: /rpgadmin <reload|give|setlevel|setclass|givexp|giveskillpoint>
+    permission: lurpg.admin
+    aliases: [lurpgadmin]
+  class:
+    description: Class selection command
+    usage: /class [select|info]
+    permission: lurpg.player
+  skill:
+    description: Skill management command
+    usage: /skill [list|cast|equip|unequip|learn]
+    permission: lurpg.player
+
+permissions:
+  lurpg.player:
+    description: Allows basic player RPG commands
+    default: true
+  lurpg.admin:
+    description: Allows admin RPG commands
+    default: op
+  lurpg.class.warrior:
+    description: Allows selecting warrior class
+    default: true
+  lurpg.class.mage:
+    description: Allows selecting mage class
+    default: true
+  lurpg.class.assassin:
+    description: Allows selecting assassin class
+    default: true

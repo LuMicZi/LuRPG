@@ -1,0 +1,89 @@
+# ===========================================
+# LuRPG Armor Sets Configuration
+# ===========================================
+
+sets:
+  # Guardian Set - Warrior tank set
+  guardian:
+    display-name: "<gradient:#0099ff:#00ffff>守护者套装"
+    description:
+      - "<gray>远古守护者的遗物"
+      - "<gray>穿戴越多，守护之力越强"
+    pieces:
+      - guardian_helmet
+      - guardian_chestplate
+      - guardian_leggings
+      - guardian_boots
+    bonuses:
+      2:
+        stats:
+          physical-defense: 15
+          max-health: 100
+        description: "<gray>2件套: 物理防御 +15, 最大生命 +100"
+      4:
+        stats:
+          physical-defense: 30
+          max-health: 250
+          magical-defense: 20
+        description: "<gray>4件套: 物理防御 +30, 最大生命 +250, 魔法防御 +20"
+        special:
+          effect: DAMAGE_REFLECTION
+          chance: 20
+          multiplier: 0.3
+          description: "<gold>4件套特效: 20%几率反射30%伤害"
+
+  # Mage Set - Mage caster set
+  archmage:
+    display-name: "<gradient:#9b59b6:#e74c3c>大法师套装"
+    description:
+      - "<gray>蕴含强大魔力的法袍"
+      - "<gray>增强法术威力"
+    pieces:
+      - archmage_helmet
+      - archmage_chestplate
+      - archmage_leggings
+      - archmage_boots
+    bonuses:
+      2:
+        stats:
+          magical-attack: 25
+          resource-max: 50
+        description: "<gray>2件套: 魔法攻击 +25, 法力上限 +50"
+      4:
+        stats:
+          magical-attack: 50
+          resource-max: 100
+          magical-defense: 30
+        description: "<gray>4件套: 魔法攻击 +50, 法力上限 +100, 魔法防御 +30"
+        special:
+          effect: MANA_REGEN
+          multiplier: 2.0
+          description: "<gold>4件套特效: 法力回复速度翻倍"
+
+  # Assassin Set - Assassin agility set
+  shadow:
+    display-name: "<gradient:#2c3e50:#34495e>暗影套装"
+    description:
+      - "<gray>暗影编织的轻甲"
+      - "<gray>提升速度与暴击"
+    pieces:
+      - shadow_helmet
+      - shadow_chestplate
+      - shadow_leggings
+      - shadow_boots
+    bonuses:
+      2:
+        stats:
+          critical-chance: 10
+          movement-speed: 10
+        description: "<gray>2件套: 暴击率 +10%, 移速 +10%"
+      4:
+        stats:
+          critical-chance: 20
+          critical-damage: 50
+          movement-speed: 20
+        description: "<gray>4件套: 暴击率 +20%, 暴击伤害 +50%, 移速 +20%"
+        special:
+          effect: SHADOW_DASH
+          cooldown: 30
+          description: "<gold>4件套特效: 每30秒可使用一次暗影冲刺"

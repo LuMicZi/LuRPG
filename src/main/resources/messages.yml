@@ -1,0 +1,123 @@
+# ===========================================
+# LuRPG Messages (zh_CN)
+# Supports MiniMessage format
+# ===========================================
+
+prefix: "<dark_gray>[<gradient:#ff6600:#ffaa00>LuRPG</gradient>] "
+
+# General
+general:
+  no-permission: "<red>你没有权限执行此操作。"
+  player-only: "<red>此命令只能由玩家执行。"
+  unknown-command: "<red>未知命令。使用 /rpg help 查看帮助。"
+  reload-success: "<green>LuRPG 配置已重载。"
+  reload-failed: "<red>重载失败，请查看控制台。"
+
+# Class system
+class:
+  select-prompt: "<yellow>请选择你的职业："
+  selected: "<green>你已选择职业：<gold>{class}</gold>！"
+  already-selected: "<red>你已经选择了职业：<gold>{class}</gold>。"
+  change-success: "<green>职业已更换为 <gold>{class}</gold>！消耗金币 <yellow>{cost}</yellow>。"
+  change-no-money: "<red>金币不足，需要 <yellow>{cost}</yellow> 金币。"
+  change-disabled: "<red>服务器未开启职业更换功能。"
+  no-class: "<red>你还没有选择职业，请先使用 <yellow>/class select</yellow> 选择职业。"
+  warrior: "<red>战士</red>"
+  mage: "<blue>法师</blue>"
+  assassin: "<dark_purple>刺客</dark_purple>"
+
+# Leveling
+level:
+  level-up: "<green>恭喜升级！你已达到 <gold> Lv.{level}</gold>！"
+  xp-gain: "<gray>获得 <green>{xp}</green> 经验值。"
+  max-level: "<gold>你已达到最高等级！"
+  xp-bar-format: "<gray>Lv.<green>{level}</green> <dark_gray>|<gray> {xp}/{max_xp} XP"
+
+# Skill system
+skill:
+  learned: "<green>成功学习技能：<gold>{skill}</gold>！"
+  already-learned: "<red>你已经学会了这个技能。"
+  level-locked: "<red>需要等级 <yellow>{level}</yellow> 才能学习此技能。"
+  class-locked: "<red>你的职业无法学习此技能。"
+  no-skill-points: "<red>技能点不足。"
+  no-money: "<red>金币不足，需要 <yellow>{cost}</yellow> 金币。"
+  cast-success: "<green>施放技能：<gold>{skill}</gold>！"
+  cast-cooldown: "<red>技能冷却中，剩余 <yellow>{time}</yellow> 秒。"
+  cast-no-resource: "<red>{resource} 不足，需要 <yellow>{cost}</yellow>。"
+  equipped: "<green>技能 <gold>{skill}</gold> 已装备。"
+  unequipped: "<green>技能 <gold>{skill}</gold> 已卸下。"
+  no-equipped-skills: "<red>你没有装备任何技能。"
+  max-equipped: "<red>已达到最大装备技能数 (<yellow>{max}</yellow>)。"
+  not-learned: "<red>你还没有学会这个技能。"
+
+# Item system
+item:
+  level-requirement: "<red>需要等级 <yellow>{level}</yellow> 才能使用此物品。"
+  class-requirement: "<red>需要职业 <yellow>{class}</yellow> 才能使用此物品。"
+  not-rpg-item: "<red>这不是一个 RPG 物品。"
+  no-item-in-hand: "<red>你手中没有物品。"
+
+# Set system
+set:
+  bonus-activated: "<green>套装效果激活：<gold>{set}</gold> (<yellow>{count}</yellow>件)！"
+  bonus-deactivated: "<gray>套装效果失效：<gold>{set}</gold>。"
+
+# Potion system
+potion:
+  used: "<green>使用了 <gold>{potion}</gold>。"
+  cooldown: "<red>药水冷却中，剩余 <yellow>{time}</yellow> 秒。"
+  max-stack: "<red>药水效果已达上限。"
+
+# GUI
+gui:
+  title-main: "<dark_blue>LuRPG <gray>主菜单"
+  title-weapons: "<dark_red>武器列表"
+  title-armor-sets: "<dark_green>套装列表"
+  title-potions: "<dark_purple>药水列表"
+  title-skills: "<dark_aqua>技能列表"
+  title-player-panel: "<dark_blue>角色面板"
+  title-skill-learn: "<dark_aqua>技能学习"
+  title-class-select: "<gold>职业选择"
+  prev-page: "<yellow>上一页"
+  next-page: "<yellow>下一页"
+  back: "<red>返回"
+  close: "<red>关闭"
+  search: "<yellow>搜索"
+  filter: "<yellow>筛选"
+  no-items: "<gray>暂无物品"
+  click-to-view: "<gray>点击查看详情"
+  click-to-learn: "<green>点击学习"
+  click-to-equip: "<green>点击装备"
+  click-to-unequip: "<red>点击卸下"
+  locked: "<red>未解锁"
+
+# Commands
+command:
+  help-header: "<gold>===== LuRPG 命令帮助 ====="
+  help-line: "<yellow>{usage} <gray>- {description}"
+  help-footer: "<gold>========================="
+  player-help:
+    - "<gold>/rpg <gray>- 打开主菜单（点击即可）"
+    - "<gold>/rpg panel <gray>- 查看角色面板"
+    - "<gold>/class select <gray>- 选择职业"
+    - "<gold>/class info <gray>- 查看职业信息"
+    - "<gold>/skill list <gray>- 查看技能列表"
+    - "<gold>/skill cast <skill> <gray>- 施放技能"
+    - "<gold>/skill equip <skill> <gray>- 装备技能"
+    - "<gold>/skill unequip <slot> <gray>- 卸下技能"
+  admin-help:
+    - "<gold>/rpgadmin reload <gray>- 重载配置"
+    - "<gold>/rpgadmin give <player> <item> [amount] <gray>- 给予物品"
+    - "<gold>/rpgadmin setlevel <player> <level> <gray>- 设置等级"
+    - "<gold>/rpgadmin setclass <player> <class> <gray>- 设置职业"
+    - "<gold>/rpgadmin givexp <player> <amount> <gray>- 给予经验"
+    - "<gold>/rpgadmin giveskillpoint <player> <amount> <gray>- 给予技能点"
+    - "<gold>/rpgadmin item <gray>- 物品编辑命令（查看帮助）"
+  player-not-found: "<red>玩家不存在或未在线。"
+  item-not-found: "<red>物品不存在。"
+  skill-not-found: "<red>技能不存在。"
+  set-level-success: "<green>已设置 <gold>{player}</gold> 的等级为 <yellow>{level}</yellow>。"
+  give-xp-success: "<green>已给予 <gold>{player}</gold> <yellow>{xp}</yellow> 经验值。"
+  give-item-success: "<green>已给予 <gold>{player}</gold> <yellow>{amount}</yellow>x <gold>{item}</gold>。"
+  give-skillpoint-success: "<green>已给予 <gold>{player}</gold> <yellow>{amount}</yellow> 技能点。"
+  set-class-success: "<green>已设置 <gold>{player}</gold> 的职业为 <yellow>{class}</yellow>。"

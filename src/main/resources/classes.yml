@@ -1,0 +1,66 @@
+# ===========================================
+# LuRPG Class Configuration
+# Author: LuMicZi
+# ===========================================
+# This file defines the base stats and growth rates for each class.
+# ClassManager loads from this file first, then falls back to
+# config.yml's stats.base and stats.growth sections if a class
+# is not defined here.
+#
+# Formula: stat_at_level = base + (growth * (level - 1))
+# ===========================================
+
+classes:
+  WARRIOR:
+    # Base stats at level 1
+    base:
+      max-health: 30.0
+      physical-attack: 5.0
+      magical-attack: 0.0
+      physical-defense: 3.0
+      magical-defense: 1.0
+      resource-max: 100.0
+    # Growth per level
+    growth:
+      max-health: 2.0
+      physical-attack: 1.0
+      magical-attack: 0.0
+      physical-defense: 0.5
+      magical-defense: 0.2
+      resource-max: 5.0
+
+  MAGE:
+    # Base stats at level 1
+    base:
+      max-health: 20.0
+      physical-attack: 0.0
+      magical-attack: 8.0
+      physical-defense: 1.0
+      magical-defense: 5.0
+      resource-max: 200.0
+    # Growth per level
+    growth:
+      max-health: 1.0
+      physical-attack: 0.0
+      magical-attack: 1.5
+      physical-defense: 0.1
+      magical-defense: 0.8
+      resource-max: 10.0
+
+  ASSASSIN:
+    # Base stats at level 1
+    base:
+      max-health: 22.0
+      physical-attack: 7.0
+      magical-attack: 0.0
+      physical-defense: 2.0
+      magical-defense: 1.0
+      resource-max: 150.0
+    # Growth per level
+    growth:
+      max-health: 1.5
+      physical-attack: 1.2
+      magical-attack: 0.0
+      physical-defense: 0.3
+      magical-defense: 0.2
+      resource-max: 8.0

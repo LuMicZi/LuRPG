@@ -1,0 +1,23 @@
+# Lore Template: Legendary (传说 - 金橙渐变)
+rarity-name: "<gradient:#ffaa00:#ff6600>✦ 传说 ✦"
+rarity-color: "<gradient:#ffaa00:#ff6600>"
+type-format: "<gold>{type}"
+separator: "<gradient:#ffaa00:#ff6600>━━━━━━━━━━━━━━━━━━━━"
+
+show-description: true
+show-stats: true
+show-element: true
+show-special-effects: true
+show-skills: true
+show-requirements: true
+show-set-info: true
+
+stat-format: "  {icon} {color}{display}: <white>{value}{suffix}"
+element-format: "  <gray>{element}: <white>{value}"
+description-format: "<yellow>  {text}"
+special-effects-title: "<gold>【特殊效果】</gold>"
+special-effect-format: "  <yellow>▸ {name}\n  <gray>{desc}"
+skill-name-format: "<gradient:#ffaa00:#ff6600>▸ {skill_name}"
+skill-desc-format: "<gold>  {desc}"
+req-level-format: "<gold>需求等级: <white>{level}"
+req-class-format: "<gold>职业: <white>{class}"

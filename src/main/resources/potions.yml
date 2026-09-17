@@ -1,0 +1,153 @@
+# ===========================================
+# LuRPG Potions Configuration
+# ===========================================
+
+potions:
+  # Instant healing potions
+  minor_healing_potion:
+    display-name: "<gradient:#ff6666:#ff0000>初级治疗药水"
+    material: POTION
+    potion-color: RED
+    level-requirement: 1
+    type: INSTANT_HEAL
+    effects:
+      heal:
+        type: INSTANT
+        amount: 30
+    cooldown: 30
+    max-stack: 3
+    lore-template: common
+    custom-model-data: 30001
+
+  greater_healing_potion:
+    display-name: "<gradient:#ff0000:#990000>高级治疗药水"
+    material: POTION
+    potion-color: DARK_RED
+    level-requirement: 10
+    type: INSTANT_HEAL
+    effects:
+      heal:
+        type: INSTANT
+        amount: 80
+      buff:
+        stat: PHYSICAL_DEFENSE
+        multiplier: 1.2
+        duration: 200
+    cooldown: 30
+    max-stack: 3
+    lore-template: rare
+    custom-model-data: 30002
+
+  # Regeneration potions
+  regeneration_potion:
+    display-name: "<gradient:#00ff00:#00aa00>持续恢复药水"
+    material: POTION
+    potion-color: GREEN
+    level-requirement: 5
+    type: REGEN
+    effects:
+      regen:
+        amount: 5
+        duration: 100
+        interval: 20
+    cooldown: 60
+    max-stack: 2
+    lore-template: rare
+    custom-model-data: 30003
+
+  # Buff potions
+  strength_potion:
+    display-name: "<gradient:#ff8800:#ff4400>力量药水"
+    material: POTION
+    potion-color: ORANGE
+    level-requirement: 8
+    type: BUFF
+    effects:
+      buff:
+        stat: PHYSICAL_ATTACK
+        multiplier: 1.3
+        duration: 600
+    cooldown: 120
+    max-stack: 1
+    lore-template: epic
+    custom-model-data: 30004
+
+  magic_power_potion:
+    display-name: "<gradient:#9b59b6:#8e44ad>魔力增幅药水"
+    material: POTION
+    potion-color: PURPLE
+    level-requirement: 8
+    type: BUFF
+    effects:
+      buff:
+        stat: MAGICAL_ATTACK
+        multiplier: 1.3
+        duration: 600
+    cooldown: 120
+    max-stack: 1
+    lore-template: epic
+    custom-model-data: 30005
+
+  # Detox potions
+  antidote_potion:
+    display-name: "<gradient:#00ffff:#00aaaa>解毒药水"
+    material: POTION
+    potion-color: AQUA
+    level-requirement: 1
+    type: DETOX
+    effects:
+      cure:
+        types: [POISON, WITHER, WEAKNESS, SLOW]
+    cooldown: 20
+    max-stack: 5
+    lore-template: common
+    custom-model-data: 30006
+
+  # Resource potions
+  mana_potion:
+    display-name: "<gradient:#0099ff:#0066cc>法力药水"
+    material: POTION
+    potion-color: BLUE
+    level-requirement: 1
+    class-requirement: [MAGE]
+    type: RESOURCE
+    effects:
+      resource:
+        type: MANA
+        amount: 50
+    cooldown: 30
+    max-stack: 3
+    lore-template: common
+    custom-model-data: 30007
+
+  rage_potion:
+    display-name: "<gradient:#ff0000:#aa0000>怒气药水"
+    material: POTION
+    potion-color: RED
+    level-requirement: 1
+    class-requirement: [WARRIOR]
+    type: RESOURCE
+    effects:
+      resource:
+        type: RAGE
+        amount: 50
+    cooldown: 30
+    max-stack: 3
+    lore-template: common
+    custom-model-data: 30008
+
+  energy_potion:
+    display-name: "<gradient:#00ff00:#88ff00>能量药水"
+    material: POTION
+    potion-color: LIME
+    level-requirement: 1
+    class-requirement: [ASSASSIN]
+    type: RESOURCE
+    effects:
+      resource:
+        type: ENERGY
+        amount: 50
+    cooldown: 30
+    max-stack: 3
+    lore-template: common
+    custom-model-data: 30009

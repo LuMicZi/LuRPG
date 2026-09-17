@@ -1,0 +1,88 @@
+# ============================================================
+#  LuRPG - 宝石镶嵌系统配置
+# ============================================================
+
+# 拆除宝石保留率（成功保留宝石，失败宝石消失）
+unsocket-keep-rate: 0.8
+
+# 宝石定义
+gems:
+  # 攻击宝石
+  ruby_1:
+    name: "<red>红宝石"
+    material: "RED_DYE"
+    custom-model-data: 1
+    tier: 1
+    stats:
+      physical-attack: 5
+  ruby_2:
+    name: "<red>精良红宝石"
+    material: "RED_DYE"
+    custom-model-data: 2
+    tier: 2
+    stats:
+      physical-attack: 12
+  ruby_3:
+    name: "<red>稀有红宝石"
+    material: "RED_DYE"
+    custom-model-data: 3
+    tier: 3
+    stats:
+      physical-attack: 25
+
+  # 防御宝石
+  sapphire_1:
+    name: "<blue>蓝宝石"
+    material: "BLUE_DYE"
+    custom-model-data: 4
+    tier: 1
+    stats:
+      physical-defense: 5
+  sapphire_2:
+    name: "<blue>精良蓝宝石"
+    material: "BLUE_DYE"
+    custom-model-data: 5
+    tier: 2
+    stats:
+      physical-defense: 12
+
+  # 生命宝石
+  emerald_1:
+    name: "<green>绿宝石"
+    material: "GREEN_DYE"
+    custom-model-data: 6
+    tier: 1
+    stats:
+      max-health: 20
+  emerald_2:
+    name: "<green>精良绿宝石"
+    material: "GREEN_DYE"
+    custom-model-data: 7
+    tier: 2
+    stats:
+      max-health: 50
+
+  # 暴击宝石
+  topaz_1:
+    name: "<gold>黄宝石"
+    material: "YELLOW_DYE"
+    custom-model-data: 8
+    tier: 1
+    stats:
+      critical-chance: 2
+  topaz_2:
+    name: "<gold>精良黄宝石"
+    material: "YELLOW_DYE"
+    custom-model-data: 9
+    tier: 2
+    stats:
+      critical-chance: 5
+
+  # 暴伤宝石
+  amethyst_1:
+    name: "<light_purple>紫水晶"
+    material: "PURPLE_DYE"
+    custom-model-data: 10
+    tier: 1
+    stats:
+      critical-damage: 10

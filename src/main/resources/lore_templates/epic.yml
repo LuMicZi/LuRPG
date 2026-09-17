@@ -1,0 +1,23 @@
+# Lore Template: Epic (史诗 - 紫色调)
+rarity-name: "<dark_purple>★ 史诗 ★"
+rarity-color: "<dark_purple>"
+type-format: "<light_purple>{type}"
+separator: "<dark_purple>━━━━━━━━━━━━━━━━━━━━"
+
+show-description: true
+show-stats: true
+show-element: true
+show-special-effects: true
+show-skills: true
+show-requirements: true
+show-set-info: true
+
+stat-format: "  {icon} {color}{display}: <white>{value}{suffix}"
+element-format: "  <gray>{element}: <white>{value}"
+description-format: "<gray>  {text}"
+special-effects-title: "<dark_purple>【特殊效果】</dark_purple>"
+special-effect-format: "  <light_purple>▸ {name}\n  <gray>{desc}"
+skill-name-format: "<aqua>▸ {skill_name}"
+skill-desc-format: "<gray>  {desc}"
+req-level-format: "<dark_purple>需求等级: <white>{level}"
+req-class-format: "<dark_purple>职业: <white>{class}"

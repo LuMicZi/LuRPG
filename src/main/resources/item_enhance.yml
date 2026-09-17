@@ -1,0 +1,45 @@
+# ============================================================
+#  LuRPG - 装备强化系统配置
+# ============================================================
+
+# 最高强化等级
+max-level: 15
+
+# 每级强化增加的属性（百分比加成，基于基础属性）
+# 第 N 级对应的加成 = level * stat-bonus-percent-per-level %
+stat-bonus-percent-per-level: 5.0
+
+# 强化成功率
+# +currentLevel -> +currentLevel+1 的成功率
+success-rates:
+  1: 1.0     # +0 -> +1  100%
+  2: 0.95    # +1 -> +2  95%
+  3: 0.90
+  4: 0.85
+  5: 0.80
+  6: 0.70
+  7: 0.60
+  8: 0.50
+  9: 0.40
+  10: 0.30
+  11: 0.20
+  12: 0.15
+  13: 0.10
+  14: 0.05
+  15: 0.02
+
+# 失败惩罚
+failure:
+  downgrade-level: true    # 失败是否掉级
+  downgrade-amount: 1      # 掉几级
+  destroy-item: false      # 失败是否销毁物品（高级强化可选）
+  destroy-start-level: 10  # 从几级开始可能销毁
+
+# 强化消耗
+cost:
+  use-money: true          # 是否消耗金币（Vault）
+  money-base: 100          # 基础金币
+  money-multiplier: 1.5    # 每级倍率
+  use-item: false          # 是否消耗材料
+  item-material: "DIAMOND" # 材料物品
+  item-amount-base: 1      # 基础数量

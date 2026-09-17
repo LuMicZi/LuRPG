@@ -1,0 +1,23 @@
+# Lore Template: Common (普通 - 灰色调)
+rarity-name: "<gray>◇ 普通 ◇"
+rarity-color: "<gray>"
+type-format: "<dark_gray>{type}"
+separator: "<dark_gray>──────────────────"
+
+show-description: true
+show-stats: true
+show-element: false
+show-special-effects: false
+show-skills: false
+show-requirements: false
+show-set-info: false
+
+stat-format: "  {icon} {color}{display}: <gray>{value}{suffix}"
+element-format: "  <gray>{element}: <white>{value}"
+description-format: "<gray>  {text}"
+special-effects-title: "<gray>【特殊效果】</gray>"
+special-effect-format: "  <gray>▸ {name}\n  <dark_gray>{desc}"
+skill-name-format: "<aqua>▸ {skill_name}"
+skill-desc-format: "<gray>  {desc}"
+req-level-format: "<dark_gray>需求等级: <gray>{level}"
+req-class-format: "<dark_gray>职业: <gray>{class}"

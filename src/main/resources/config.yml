@@ -1,0 +1,214 @@
+# ===========================================
+# LuRPG Configuration
+# Author: LuMicZi
+# ===========================================
+
+# General settings
+general:
+  # Language file (messages_xx.yml)
+  language: zh_CN
+  # Debug mode (verbose console output)
+  debug: false
+  # Auto-save interval in seconds (0 = disabled, use only on quit)
+  auto-save-interval: 300
+
+# Database settings
+database:
+  # Storage type: sqlite | mysql
+  type: sqlite
+  # SQLite settings
+  sqlite:
+    file: data.db
+  # MySQL settings
+  mysql:
+    host: localhost
+    port: 3306
+    database: lurpg
+    username: root
+    password: ''
+    # Connection pool settings
+    pool-size: 10
+    # Additional connection parameters
+    properties:
+      useSSL: false
+      useUnicode: true
+      characterEncoding: utf8
+      autoReconnect: true
+
+# Leveling system
+leveling:
+  # Base XP required for level 2
+  base-xp: 100
+  # XP multiplier per level (xp = base-xp * (multiplier ^ (level-1)))
+  xp-multiplier: 1.15
+  # Max level (0 = no cap)
+  max-level: 100
+  # XP sources
+  xp-sources:
+    mob-kill:
+      enabled: true
+      # XP = mob-base-xp * multiplier
+      multiplier: 1.0
+      # MythicMobs custom XP (uses MythicMobs drop metadata)
+      mythicmobs-multiplier: 2.0
+    pvp-kill:
+      enabled: true
+      # XP = victim-level * multiplier
+      multiplier: 50.0
+    gathering:
+      enabled: true
+      # XP per action
+      mining-xp: 5
+      fishing-xp: 8
+      woodcutting-xp: 5
+      farming-xp: 3
+    quest:
+      enabled: true
+
+# Class system
+classes:
+  # Available classes
+  list:
+    - WARRIOR
+    - MAGE
+    - ASSASSIN
+  # Allow class change (costs gold if Vault is enabled)
+  allow-class-change: true
+  class-change-cost: 1000.0
+  # Starting class (auto-assigned on first join, null = let player choose)
+  starting-class: null
+
+# Stat system
+stats:
+  # Base stats per class (at level 1)
+  base:
+    WARRIOR:
+      max-health: 30.0
+      physical-attack: 5.0
+      physical-defense: 3.0
+      resource-max: 100.0
+    MAGE:
+      max-health: 20.0
+      magical-attack: 8.0
+      magical-defense: 5.0
+      resource-max: 200.0
+    ASSASSIN:
+      max-health: 22.0
+      physical-attack: 7.0
+      physical-defense: 2.0
+      resource-max: 150.0
+  # Stat growth per level
+  growth:
+    WARRIOR:
+      max-health: 2.0
+      physical-attack: 1.0
+      physical-defense: 0.5
+      resource-max: 5.0
+    MAGE:
+      max-health: 1.0
+      magical-attack: 1.5
+      magical-defense: 0.8
+      resource-max: 10.0
+    ASSASSIN:
+      max-health: 1.5
+      physical-attack: 1.2
+      physical-defense: 0.3
+      resource-max: 8.0
+  # Combat settings
+  combat:
+    # Critical hit base multiplier
+    crit-base-multiplier: 1.5
+    # Lifesteal cap (percentage of damage)
+    lifesteal-cap: 50.0
+    # Element damage settings
+    elements:
+      fire:
+        burn-duration: 40
+        burn-damage-per-tick: 2.0
+      ice:
+        slow-duration: 60
+        slow-amplifier: 1
+      thunder:
+        stun-chance: 20.0
+        stun-duration: 20
+      dark:
+        wither-duration: 60
+        wither-amplifier: 1
+      light:
+        heal-amount: 5.0
+
+# Skill system
+skills:
+  # Global cooldown multiplier
+  cooldown-multiplier: 1.0
+  # Resource cost multiplier
+  cost-multiplier: 1.0
+  # Max equipped skills per player
+  max-equipped-skills: 5
+  # Skill learning settings
+  learning:
+    # Skill point gain per level
+    skill-points-per-level: 1
+    # Gold cost multiplier for GUI learning (requires Vault)
+    gold-cost-multiplier: 1.0
+
+# Set system
+sets:
+  # Check interval for set bonus (ticks)
+  check-interval: 20
+
+# Potion system
+potions:
+  # Global cooldown (ticks)
+  global-cooldown: 40
+  # Max simultaneous potion effects
+  max-stack: 3
+  # Drink animation
+  drink-animation: true
+
+# GUI settings
+gui:
+  # Items per page in list GUIs
+  items-per-page: 45
+  # Show item comparison tooltip
+  show-comparison: true
+  # Fill empty slots with barrier
+  fill-empty: true
+  # Fill material
+  fill-material: GRAY_STAINED_GLASS_PANE
+  # Navigation buttons
+  nav:
+    prev-page: ARROW
+    next-page: ARROW
+    back: BARRIER
+    close: BARRIER
+
+# CraftEngine integration
+craftengine:
+  # RPG field key in CraftEngine item config
+  rpg-field-key: rpg
+  # Auto-register items on CraftEngine reload
+  auto-register: true
+  # Lore template directory
+  lore-templates-dir: lore_templates
+
+# Seal system (封印/解封绑定系统)
+seal:
+  # Enable the seal/unseal binding system
+  enabled: true
+  # Auto-unseal (bind) items when equipped
+  auto-unseal-on-equip: true
+  # Prevent dropping bound items
+  prevent-drop: true
+  # Prevent placing bound items into containers
+  prevent-container: true
+  # Keep bound items on death
+  keep-on-death: true
+  # Seal scroll consumable configuration
+  seal-scroll:
+    material: "PAPER"
+    display-name: "<light_purple>封券</light_purple>"
+    custom-model-data: 1001
+    lore:
+      - "<gray>用于重新封印已解封的装备</gray>"
+      - "<gray>使用方法：手持封券，另一只手持装备，右键使用</gray>"
